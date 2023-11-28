@@ -87,19 +87,17 @@ def calculate():
             st.success("spiral,unstable")   
         elif lamb < 0:
             st.success("spiral,linear stable")   
-    
     else: 
+        st.success("not ok")
         if eigenvalues[0] != eigenvalues[1]:
             if eigenvalues[0] > 0 and eigenvalues[1] < 0:
                 st.success("saddle,unstable")
             elif eigenvalues[1] > 0 and eigenvalues[0] < 0:
                 st.success("saddle,unstable")
-                
-            if eigenvalues[0] > 0 and eigenvalues[1] > 0:
+            elif eigenvalues[0] > 0 and eigenvalues[1] > 0:
                 st.success("node,unstable")
             elif eigenvalues[0] < 0 and eigenvalues[1] < 0:
                 st.success("node,linear stable")
-
         else:
             st.success("ok")
             if matrix == np.array([[eigenvalues[0], 0],
