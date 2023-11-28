@@ -51,7 +51,7 @@ def calculate():
     # Calculate eigenvalues and eigenvectors manually
     eigenvalues, eigenvectors = np.linalg.eig(matrix)
     st.write("Eigenvalues")
-    root = np.power(num1+num4,2) - 4*np.linalg.det(matrix)
+    root = np.power(num1+num4,2) - 4*int(np.linalg.det(matrix))
     st.success(f"root: {np.linalg.det(matrix)}")
     
     if  root >= 0:
