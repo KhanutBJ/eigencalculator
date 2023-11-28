@@ -97,8 +97,8 @@ def calculate():
             elif eigenvalues[0] < 0 and eigenvalues[1] < 0:
                 st.success("node,linear stable")
         else:
-            if matrix == np.array([[eigenvalues[0], 0],
-                                    [0, eigenvalues[1]]]):
+            if matrix == [[eigenvalues[0], 0],
+                          [0, eigenvalues[1]]]:
                 if eigenvalues[0] > 0:
                     st.success("true node,unstable")
                 else:
