@@ -52,7 +52,7 @@ def calculate():
     eigenvalues, eigenvectors = np.linalg.eig(matrix)
     st.write("Eigenvalues")
     root = np.power(num1+num4,2) - 4*np.linalg.det(matrix)
-    st.success(f"root: {root}")
+    st.success(f"root: {np.linalg.det(matrix)}")
     
     if  root >= 0:
         values = np.array(eigenvalues).astype(int)
