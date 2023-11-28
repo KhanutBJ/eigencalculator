@@ -9,6 +9,9 @@ st.title("Eigenvalue Calculator App")
 st.title("Made by the two goats of RAMA")
 st.write("---")
 
+st.write("limitation: cannot calculate eigenvector for imaginary part (i) TT")
+st.write("disclaimer: We accept no responsibility or liability for any error in your score !")
+
 def display_matrix(matrix, title):
     st.write(f"## {title}")
     for row in matrix:
