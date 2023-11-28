@@ -90,14 +90,14 @@ def calculate():
     
     else: 
         if eigenvalues[0] > 0 and eigenvalues[1] > 0:
-            if eigenvalues[0] == eigenvalues[1] and num2 == num3:
+            if eigenvalues[0] == eigenvalues[1] and num2 == 0 and num3 == 0 :
                 st.success ("true node,unstable")   
             else:
                 st.success("node,unstable")
         elif eigenvalues[0] > 0 and eigenvalues[1] < 0:
-            st.success("saddle,unstable")
+            st.success("dorhorse,unstable")
         elif eigenvalues[1] > 0 and eigenvalues[0] < 0:
-            st.success("saddle,unstable")
+            st.success("dorhorse,unstable")
         elif eigenvalues[0] < 0 and eigenvalues[1] < 0:
             if eigenvalues[0] == eigenvalues[1] and num2 == num3 == 0:
                 st.success("true node,linear stable")
@@ -111,7 +111,6 @@ def calculate():
                 st.success("fake node,linear stable")
             else:
                 st.success("node,linear unstable")
-    
  
 if st.button("Calculate result"):
     calculate()
