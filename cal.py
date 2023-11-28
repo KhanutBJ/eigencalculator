@@ -57,10 +57,10 @@ def calculate():
         values = np.array(eigenvalues).astype(int)
         st.success(f"Eigenvalues: {values[0]}, {values[1]} ")
     else:           
-        if np.power(num1+num4,2) == 0:
+        try:
             result = symbolic_square_root(int(np.linalg.det(matrix)))
             x = f"+/- {result}i"
-        else:
+        except:
             result = cmath.sqrt(root)
             x = f"{result.imag/2}i"
         st.success(f"lambda: {(num1+num4) / 2} +/- mu: {x}")
