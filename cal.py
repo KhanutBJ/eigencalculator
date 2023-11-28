@@ -89,28 +89,32 @@ def calculate():
             st.success("spiral,linear stable")   
     
     else: 
-        if eigenvalues[0] > 0 and eigenvalues[1] > 0:
-            if eigenvalues[0] == eigenvalues[1] and num2 == 0 and num3 == 0 :
-                st.success ("true node,unstable")   
-            else:
+        if eigenvalues[0] != eigenvalues[1]:
+            if eigenvalues[0] > 0 and eigenvalues[1] < 0:
+                st.success("saddle,unstable")
+            elif eigenvalues[1] > 0 and eigenvalues[0] < 0:
+                st.success("saddle,unstable")
+                
+            if eigenvalues[0] > 0 and eigenvalues[1] > 0:
                 st.success("node,unstable")
-        elif eigenvalues[0] > 0 and eigenvalues[1] < 0:
-            st.success("dorhorse,unstable")
-        elif eigenvalues[1] > 0 and eigenvalues[0] < 0:
-            st.success("dorhorse,unstable")
-        elif eigenvalues[0] < 0 and eigenvalues[1] < 0:
-            if eigenvalues[0] == eigenvalues[1] and num2 == num3 == 0:
-                st.success("true node,linear stable")
-            elif eigenvalues[0] == eigenvalues[1] and num2 != num3 and num2 != 0:
-                st.success("fake node,linear stable")
-            elif eigenvalues[0] == eigenvalues[1] and num2 == num3 and num2 != 0:
-                st.success("fake node,linear stable")
-            elif eigenvalues[0] == eigenvalues[1] and num2 != num3 and num3 != 0:
-                st.success("fake node,linear stable")
-            elif eigenvalues[0] == eigenvalues[1] and num2 == num3 and num3 != 0:
-                st.success("fake node,linear stable")
+            elif eigenvalues[0] < 0 and eigenvalues[1] < 0:
+                st.success("node,linear stable")
+
+        else:
+            if matrix == np.array([[eigenvalues[0], 0],
+                                    [0, eigenvalues[1]]]):
+                if eigenvalues[0] > 0:
+                    st.success("true node,unstable")
+                else:
+                    st.success("true node,linear stable")
+
             else:
-                st.success("node,linear unstable")
+
+                if eigenvalues[0] > 0:
+                    st.success("fake node,unstable")
+                else:
+                    st.success("fake node,linear stable")
+
  
 if st.button("Calculate result"):
     calculate()
