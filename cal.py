@@ -9,6 +9,8 @@ st.title("Eigenvalue Calculator App")
 st.title("Made by the two goats of RAMA")
 st.write("---")
 
+st.write("output: eigenvalues, eigenvectors, graph type")
+
 st.write("limitation: cannot calculate eigenvector for imaginary part (i) TT")
 st.write("disclaimer: We accept no responsibility or liability for any error in your score !")
 
@@ -52,7 +54,8 @@ def calculate():
     root = np.power(num1+num4,2) - 4*np.linalg.det(matrix)
     
     if  root >= 0:
-        st.success(f"Eigenvalues: {np.array(eigenvalues).astype(int)}")
+        values = np.array(eigenvalues).astype(int)
+        st.success(f"Eigenvalues: {values[0]}, {values[1]} ")
     else:           
         if np.power(num1+num4,2) == 0:
             result = symbolic_square_root(int(np.linalg.det(matrix)))
