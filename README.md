@@ -18,7 +18,7 @@ The Eigenvalue Calculator is a simple tool designed to calculate eigenvalues, ei
 ## Installation
 1. Clone this repository:
    ```
-   git clone https://github.com/your-username/eigencalculator.git
+   git clone https://github.com/khanutbj/eigencalculator.git
    cd eigencalculator
    ```
 2. Install the required dependencies:
@@ -28,7 +28,7 @@ The Eigenvalue Calculator is a simple tool designed to calculate eigenvalues, ei
 ## Usage
 1. Run the application:
    ```
-    streamlit run app.py
+    streamlit run cal.py
    ```
 2. Open the provided link in your web browser.
 3. Enter the matrix values and click the "Calculate Result" button.
